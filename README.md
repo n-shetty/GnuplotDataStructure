@@ -7,7 +7,7 @@ In gnuplot, a dataset can be chosen by invoking the keyword "index", and a datab
 
 plot 'sample.dat' index 0 every :::0::0  using 1:3
 
-The above command plots the data contained in the first dataset (as indicated by "index 0") and in the first datablock (as indicated by every :::0::0).
+The above command plots the data contained in the first dataset (as indicated by "index 0") and in the first datablock (as indicated by "every :::0::0").
 
 For further info on "index" and "every" please refer to the gnuplot manual.
 
