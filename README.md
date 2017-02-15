@@ -11,7 +11,7 @@ The above command plots the data contained in the first dataset (as indicated by
 
 For further info on "index" and "every" please refer to the gnuplot manual.
 
-The package GnuplotDataStructure will read a datafile containing datasets and datablocks, and converts them to numpy arrays. The data contained in the newly created arrays can be plotted using matplotlib while conveniently choosing the dataset or datablock.
+The package GnuplotDataStructure will read a datafile containing datasets and datablocks, and returns them as numpy arrays. The data contained in the newly created arrays can be plotted using matplotlib while conveniently choosing the dataset or datablock.
 
 The methods in the class can parse and plot the data.
 

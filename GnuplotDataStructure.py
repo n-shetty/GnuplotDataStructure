@@ -1,5 +1,5 @@
 """
-The package GnuplotDataStructure will read a datafile containing datasets and datablocks, and converts them to numpy arrays.
+The package GnuplotDataStructure will read a datafile containing datasets and datablocks, and returns them as numpy arrays.
 """
 
 import numpy as np
