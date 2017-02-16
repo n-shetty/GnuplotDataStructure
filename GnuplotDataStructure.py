@@ -4,6 +4,8 @@ The package GnuplotDataStructure will read a datafile containing datasets and da
 
 import numpy as np
 from StringIO import StringIO
+import matplotlib.pyplot as plt
+
 
 class GnuplotDataStructure:
     def __init__(self):
@@ -18,3 +20,8 @@ class GnuplotDataStructure:
         datablock = dataset[index].split('\n\n')
         part = StringIO(datablock[block])
         return np.loadtxt(part)
+
+    def plotData(self, filename, index, block, x, y):
+        data = self.parseDatafile(filename, index, block)
+        plt.plot(data[:,x], data[:,y])
+        plt.show()
