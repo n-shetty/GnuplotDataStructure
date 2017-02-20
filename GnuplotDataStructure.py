@@ -12,7 +12,12 @@ class GnuplotDataStructure:
 
     Members:
 
-        'gnuplot' -- the file object gathering the commands.
+        'file_handle' -- the file handle pointing to opened file
+        'raw_data' -- holds the content of the file
+        'dataset' -- holds datasets
+        'datablock' -- holds datablocks
+        'raw_datablock' -- lists are converted to raw data and held here
+                           so as to be easily read back using numpy's loadtxt
 
     Methods:
 
@@ -28,16 +33,18 @@ class GnuplotDataStructure:
         print('GnuplotDataStructure objects can be created')
 
     def parseDatafile(self, filename, index, block):
-        f = open(filename, 'r')
-        raw_data = f.read()
-        f.close()
+        file_handle = open(filename, 'r')
+        raw_data = file_handle.read()
+        file_handle.close()
 
         dataset = raw_data.split('\n\n\n')
         datablock = dataset[index].split('\n\n')
-        part = StringIO(datablock[block])
-        return np.loadtxt(part)
+        raw_datablock = StringIO(datablock[block])
+        return np.loadtxt(raw_datablock)
 
     def plotData(self, filename, index, block, x, y):
         data = self.parseDatafile(filename, index, block)
         plt.plot(data[:,x], data[:,y])
         plt.show()
+
+        
