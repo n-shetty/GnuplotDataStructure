@@ -8,6 +8,22 @@ import matplotlib.pyplot as plt
 
 
 class GnuplotDataStructure:
+    """
+
+    Members:
+
+        'gnuplot' -- the file object gathering the commands.
+
+    Methods:
+
+        '__init__' -- print activation information.
+
+        'parseDatafile' -- read gnuplot datafile and parse it to numpy arrays.
+
+        'plotData' -- plot the parsed data.
+
+    """
+    
     def __init__(self):
         print('GnuplotDataStructure objects can be created')
 
